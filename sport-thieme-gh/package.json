@@ -14,7 +14,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test:coverage": "react-scripts test --coverage --watchAll",
+    "test:coverage": "react-scripts test --coverage",
     "test:debug": "react-scripts --inspect-brk test --runInBand --no-cache --watch",
     "test:watch": "react-scripts test --watch",
     "eject": "react-scripts eject",
@@ -46,6 +46,7 @@
     "prettier": "^1.19.1"
   },
   "jest": {
+    "collectCoverageFrom": ["**/src/**/*js"],
     "coveragePathIgnorePatterns": ["<rootDir>/build/", "<rootDir>/node_modules/", "<rootDir>/src/serviceWorker.js"],
     "coverageThreshold": {
       "global": {
