@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - checkout:
-          path: ~/sport-thieme-gh
+          path: ~/sporthieme-challenge
 
       - restore_cache:
           keys:
