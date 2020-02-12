@@ -14,9 +14,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "react-scripts test --coverage --watchAll",
+    "test:debug": "react-scripts --inspect-brk test --runInBand --no-cache --watch",
+    "test:watch": "react-scripts test --watch",
     "eject": "react-scripts eject",
     "lint": "eslint --ignore-path .gitignore .",
-    "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|jsx|json)\"",
+    "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|jsx)\"",
     "format": "npm run prettier -- --write",
     "check-format": "npm run prettier -- --list-different",
     "validate": "npm-run-all --parallel check-format lint build"
