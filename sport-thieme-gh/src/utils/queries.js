@@ -15,12 +15,6 @@ export const GET_REPOSITORIES = gql`
             name
             color
           }
-          issues {
-            totalCount
-          }
-          pullRequests {
-            totalCount
-          }
         }
       }
     }
