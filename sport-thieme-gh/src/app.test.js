@@ -4,5 +4,5 @@ import App from './app';
 
 it('renders without crashing', () => {
   const { getByAltText } = render(<App />);
-  expect(getByAltText('Sport-Thieme')).toBeInTheDOM();
+  expect(getByAltText('Sport-Thieme')).toBeInTheDocument();
 });
