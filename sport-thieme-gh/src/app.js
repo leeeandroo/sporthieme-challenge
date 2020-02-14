@@ -1,13 +1,17 @@
 import React from 'react';
+import { ApolloProvider } from '@apollo/react-hooks';
 
 import Base from './components/base';
 import Routes from './components/routes';
+import { apolloClient } from './utils/graphql';
 
 function App() {
   return (
-    <Base>
-      <Routes />
-    </Base>
+    <ApolloProvider client={apolloClient}>
+      <Base>
+        <Routes />
+      </Base>
+    </ApolloProvider>
   );
 }
 
