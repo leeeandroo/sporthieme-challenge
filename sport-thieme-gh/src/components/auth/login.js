@@ -12,7 +12,7 @@ import {
 function Login() {
   const handleGithubValidation = () => {
     const gh_auth_url = `${GH_AUTH_API_URI}?client_id=${GH_CLIENT_ID}&scope=user&redirect_uri=${GH_REDIRECT_URI}`;
-    window.location = gh_auth_url;
+    window.location.assign(gh_auth_url);
   };
 
   const setGithubAccessToken = async code => {
@@ -27,7 +27,7 @@ function Login() {
       })
       .then(({ token }) => {
         localStorage.setItem('github_token', token);
-        window.location = '/';
+        window.location.assign('/');
       });
   };
 
