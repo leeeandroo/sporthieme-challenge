@@ -1,15 +1,13 @@
 import React from 'react';
 
-import logo from './images/sport-thieme-logo.png';
-import './app.css';
+import Base from './components/base';
+import Routes from './components/routes';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="Sport-thieme" alt="Sport-Thieme" />
-      </header>
-    </div>
+    <Base>
+      <Routes />
+    </Base>
   );
 }
 
