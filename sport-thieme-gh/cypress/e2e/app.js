@@ -1,7 +1,7 @@
 describe('test app', () => {
   it('can access app', () => {
     cy.visit('/')
-      .findByText(/Learn React/i)
+      .findByAltText(/Sport-Thieme/i)
       .should('exist');
   });
 });
