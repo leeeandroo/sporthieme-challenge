@@ -20,7 +20,7 @@ function Github() {
     if (!loading && !error && data) {
       setRepositories(data.viewer.repositories.nodes);
     }
-  }, [data]);
+  }, [data, error, loading]);
 
   return (
     <Grid item p={2}>
