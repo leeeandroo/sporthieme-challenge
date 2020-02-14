@@ -16,12 +16,8 @@ function Login() {
   };
 
   const setGithubAccessToken = async code => {
-    const config = {
-      method: 'GET',
-      headers: { 'content-type': 'application/json' },
-    };
     await window
-      .fetch(`${GH_ACCESS_TOKEN_API_URI}/${code}`, config)
+      .fetch(`${GH_ACCESS_TOKEN_API_URI}/${code}`)
       .then(r => {
         return r.json();
       })
