@@ -22,5 +22,15 @@ export const IssueNodeFragment = gql`
         color
       }
     }
+    comments(first: 100) {
+      nodes {
+        author {
+          login
+          avatarUrl
+        }
+        body
+        createdAt
+      }
+    }
   }
 `;

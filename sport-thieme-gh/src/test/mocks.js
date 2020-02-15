@@ -30,6 +30,14 @@ const labelBuilder = build('Label').fields({
   color: fake(f => f.internet.color()),
 });
 
+const commentBuilder = build('Comment').fields({
+  __typename: 'Comment',
+  title: fake(f => f.lorem.words()),
+  createdAt: fake(f => f.date.recent()),
+  body: fake(f => f.lorem.paragraphs()),
+  author: userBuilder(),
+});
+
 const issueBuilder = build('Language').fields({
   __typename: 'Issue',
   title: fake(f => f.lorem.words()),
@@ -45,19 +53,9 @@ const issueBuilder = build('Language').fields({
     __typename: 'LabelConnection',
     nodes: [labelBuilder()],
   },
-});
-
-const commentBuilder = build('Comment').fields({
-  __typename: 'Comment',
-  title: fake(f => f.lorem.words()),
-  createdAt: fake(f => f.date.recent()),
-  author: userBuilder(),
-  body: fake(f => f.lorem.paragraphs()),
   comments: {
-    __typename: 'Comment',
-    author: userBuilder(),
-    body: fake(f => f.lorem.paragraphs()),
-    createdAt: fake(f => f.date.recent()),
+    __typename: 'CommentConnection',
+    nodes: [commentBuilder(), commentBuilder()],
   },
 });
 
