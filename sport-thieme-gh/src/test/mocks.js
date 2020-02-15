@@ -5,7 +5,7 @@ import { GET_REPOSITORIES, GET_REPOSITORY } from '../utils/queries';
 export const repositoriesBuilder = build('Repository').fields({
   __typename: 'Repository',
   name: fake(f => f.lorem.words()),
-  description: fake(f => f.lorem.paragraphs().replace(/\r\n/g, '')),
+  description: fake(f => f.lorem.paragraph()),
   primaryLanguage: {
     __typename: 'PrimaryLanguage',
     name: fake(f => f.lorem.word()),
@@ -34,14 +34,14 @@ const commentBuilder = build('Comment').fields({
   __typename: 'Comment',
   title: fake(f => f.lorem.words()),
   createdAt: fake(f => f.date.recent()),
-  body: fake(f => f.lorem.paragraphs()),
+  body: fake(f => f.lorem.paragraph()),
   author: userBuilder(),
 });
 
 export const issueBuilder = build('Language').fields({
   __typename: 'Issue',
   title: fake(f => f.lorem.words()),
-  body: fake(f => f.lorem.paragraphs()),
+  body: fake(f => f.lorem.paragraph()),
   state: 'OPEN',
   createdAt: fake(f => f.date.recent()),
   assignees: {
@@ -64,7 +64,7 @@ export const pullrequestBuilder = build('PullRequest').fields({
   title: fake(f => f.lorem.words()),
   createdAt: fake(f => f.date.recent()),
   author: userBuilder(),
-  body: fake(f => f.lorem.paragraphs()),
+  body: fake(f => f.lorem.paragraph()),
   comments: {
     __typename: 'CommentsConnection',
     nodes: [commentBuilder(), commentBuilder()],
@@ -74,7 +74,7 @@ export const pullrequestBuilder = build('PullRequest').fields({
 export const repositoryBuilder = build('Repository').fields({
   __typename: 'Repository',
   name: fake(f => f.lorem.words()),
-  description: fake(f => f.lorem.paragraphs().replace(/\r\n/g, '')),
+  description: fake(f => f.lorem.paragraph()),
   primaryLanguage: {
     __typename: 'PrimaryLanguage',
     name: fake(f => f.lorem.word()),

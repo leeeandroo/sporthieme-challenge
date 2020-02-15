@@ -9,15 +9,17 @@ import { issueBuilder } from '../../../test/mocks';
 describe('IssueDetail Component:', () => {
   it('renders issue detail', async () => {
     const issue = issueBuilder();
-    const { getByText } = render(<IssueDetail issue={issue}></IssueDetail>);
-    expect(getByText(issue.body)).toBeInTheDocument();
+    const { queryByText } = render(<IssueDetail issue={issue}></IssueDetail>);
+    expect(queryByText(issue.body)).toBeInTheDocument();
   });
 
   it('renders comment', async () => {
     const issue = issueBuilder();
-    const { getByText } = render(<IssueDetail issue={issue}></IssueDetail>);
+    const { getByText, queryByText } = render(
+      <IssueDetail issue={issue}></IssueDetail>,
+    );
 
     expect(getByText(/comments/i)).toBeInTheDocument();
-    expect(getByText(issue.comments.nodes[0].body)).toBeInTheDocument();
+    expect(queryByText(issue.comments.nodes[0].body)).toBeInTheDocument();
   });
 });
