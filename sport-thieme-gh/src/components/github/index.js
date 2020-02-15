@@ -10,7 +10,7 @@ import Repository from './repository';
 import { GET_REPOSITORIES } from '../../utils/queries';
 
 function Github() {
-  const [token] = React.useState(localStorage.getItem('github_token'));
+  const [token] = React.useState(window.localStorage.getItem('github_token'));
   const [repositories, setRepositories] = React.useState([]);
 
   const { loading, error, data } = useQuery(GET_REPOSITORIES);
@@ -20,6 +20,10 @@ function Github() {
       setRepositories(data.viewer.repositories.nodes);
     }
   }, [data, error, loading]);
+
+  if (!loading && error) {
+    return <p>Something went wrong, please try again later.</p>;
+  }
 
   return (
     <Grid item p={2}>
