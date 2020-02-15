@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from '@reach/router';
 import { makeStyles } from '@material-ui/core/styles';
 
 import AppBar from '@material-ui/core/AppBar';
@@ -51,7 +52,9 @@ function Base({ children }) {
     <div className={classes.root}>
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
-          <img src={logo} className={classes.logo} alt="Sport-Thieme" />
+          <Link to="/">
+            <img src={logo} className={classes.logo} alt="Sport-Thieme" />
+          </Link>
 
           <Typography variant="h6" noWrap className={classes.title}>
             <Login />
