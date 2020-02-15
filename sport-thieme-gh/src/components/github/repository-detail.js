@@ -115,6 +115,7 @@ function RepositoryDetail({ repository_name }) {
                   {ISSUE_STATES.map(state => {
                     return (
                       <Button
+                        key={state}
                         disabled={issueState === state}
                         onClick={() => handleIssueState(state)}>
                         {state}
