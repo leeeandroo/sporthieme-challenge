@@ -23,16 +23,6 @@ function PullRequest({ pullrequest }) {
         primary={pullrequest.title}
         secondary={moment(pullrequest.createdAt).format('DD.MM.YYYY hh:mm')}
       />
-      <ListItemSecondaryAction>
-        <Button
-          variant="contained"
-          size="small"
-          startIcon={<PageviewIcon />}
-          component={Link}
-          to={`/repository/${pullrequest.name}`}>
-          See More
-        </Button>
-      </ListItemSecondaryAction>
     </ListItem>
   );
 }
