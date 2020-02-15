@@ -42,7 +42,7 @@ describe('Github Component:', () => {
 
   it('renders list of repositories', async () => {
     Storage.prototype.getItem = jest.fn(item => 'token');
-    const { getByText, debug } = render(
+    const { getByText } = render(
       <MockedProvider mocks={mockRepositoriesSuccess}>
         <Github></Github>
       </MockedProvider>,
