@@ -24,7 +24,7 @@
     "cy:run": "cypress run",
     "cy:open": "cypress open",
     "test": "is-ci \"test:coverage\" \"test:watch\"",
-    "test:coverage": "react-scripts test --coverage",
+    "test:coverage": "react-scripts test --coverage --watchAll",
     "test:e2e": "is-ci \"test:e2e:run\" \"test:e2e:dev\"",
     "test:e2e:run": "start-server-and-test start http://localhost:3000 cy:run",
     "test:e2e:dev": "start-server-and-test start http://localhost:3000 cy:open",
