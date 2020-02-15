@@ -28,7 +28,7 @@ function Issue({ issue }) {
           startIcon={<PageviewIcon />}
           component={Link}
           to={`/repository/${issue.name}`}>
-          See More
+          See Issue
         </Button>
       </ListItemSecondaryAction>
     </ListItem>
