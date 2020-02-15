@@ -59,14 +59,14 @@ export const GET_REPOSITORY = gql`
               avatarUrl
               login
             }
-            bodyHTML
+            body
             comments(first: 100) {
               nodes {
                 author {
                   avatarUrl
                   login
                 }
-                bodyHTML
+                body
                 createdAt
               }
             }

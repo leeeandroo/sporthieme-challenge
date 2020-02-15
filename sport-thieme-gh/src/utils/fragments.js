@@ -9,7 +9,7 @@ export const IssueNodeFragment = gql`
     assignees(first: 100) {
       nodes {
         avatarUrl
-        name
+        login
       }
     }
     author {
