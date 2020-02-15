@@ -47,7 +47,10 @@ export const GET_REPOSITORY = gql`
         openIssues: issues(first: 100, states: [OPEN]) {
           totalCount
         }
-        pullRequests(first: 100) {
+        pullRequests(
+          first: 100
+          orderBy: { field: CREATED_AT, direction: DESC }
+        ) {
           totalCount
           nodes {
             title
