@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import Base from '../base';
 
-describe('Base Component', () => {
+describe('Base Component:', () => {
   it('renders the children', () => {
     const { getByText } = render(<Base>Children component</Base>);
     expect(getByText(/Children component/i)).toBeInTheDocument();

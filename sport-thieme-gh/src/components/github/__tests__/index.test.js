@@ -49,8 +49,6 @@ const mockError = [
       query: GET_REPOSITORIES,
     },
     result: () => {
-      // do something, such as recording that this function has been called
-      // ...
       return {
         error: true,
       };
@@ -58,14 +56,13 @@ const mockError = [
   },
 ];
 
-describe('Github Component', () => {
+describe('Github Component:', () => {
   it('renders without token', async () => {
     const { getByText } = render(
       <MockedProvider mocks={mockSuccess}>
         <Github></Github>
       </MockedProvider>,
     );
-
     await wait(() =>
       expect(
         getByText(

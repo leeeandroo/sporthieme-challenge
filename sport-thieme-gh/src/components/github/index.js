@@ -33,7 +33,6 @@ function Github() {
             <p>
               Please choose the repository you want to see more information:
             </p>
-            {error && <p>Something went wrong, please try again.</p>}
             <List>
               {repositories.map(repository => {
                 return (

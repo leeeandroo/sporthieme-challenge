@@ -8,7 +8,7 @@ import {
   GH_REDIRECT_URI,
 } from '../../../utils/github';
 
-describe('Login Component', () => {
+describe('Login Component:', () => {
   it('renders the GitHub authorize button', () => {
     const { getByText } = render(<Login />);
     expect(getByText(/Authorize/i)).toBeInTheDocument();
