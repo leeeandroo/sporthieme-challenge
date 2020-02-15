@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { useQuery } from '@apollo/react-hooks';
 import Box from '@material-ui/core/Box';
 import List from '@material-ui/core/List';

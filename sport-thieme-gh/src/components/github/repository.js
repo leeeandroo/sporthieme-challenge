@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from '@reach/router';
 import { makeStyles } from '@material-ui/core/styles';
 
 import Avatar from '@material-ui/core/Avatar';
@@ -44,8 +45,12 @@ function Repository({ repository }) {
             className={classes.principalLanguage}
           />
         )}
-
-        <Button variant="contained" size="small" startIcon={<PageviewIcon />}>
+        <Button
+          variant="contained"
+          size="small"
+          startIcon={<PageviewIcon />}
+          component={Link}
+          to={`/repository/${repository.name}`}>
           See More
         </Button>
       </ListItemSecondaryAction>
