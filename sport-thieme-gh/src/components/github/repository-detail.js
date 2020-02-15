@@ -105,7 +105,8 @@ function RepositoryDetail({ repository_name }) {
                 <Badge
                   badgeContent={repository.openIssues.totalCount}
                   color="primary"
-                  className={classes.actionButton}>
+                  className={classes.actionButton}
+                  data-testid="number-of-open-issues">
                   <ErrorOutlineIcon />
                   Issues
                 </Badge>
@@ -137,7 +138,8 @@ function RepositoryDetail({ repository_name }) {
                 <Badge
                   badgeContent={repository.pullRequests.totalCount}
                   color="primary"
-                  className={classes.actionButton}>
+                  className={classes.actionButton}
+                  data-testid="number-of-pull-requests">
                   <GitHubIcon />
                   Pull requests
                 </Badge>
