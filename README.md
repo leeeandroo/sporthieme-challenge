@@ -65,6 +65,8 @@ I have configured circleCI to make the build and validate when new code is pushe
 
 ![CircleCI](_assets/circleci.png)
 
+![CircleCI](_assets/circleci-pipeline.png)
+
 Also, on build we generate the test coverage from the project and send to codecov tool.
 
 ![Codecov](_assets/codecov.png)
