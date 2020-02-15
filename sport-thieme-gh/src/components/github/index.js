@@ -1,13 +1,13 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import Box from '@material-ui/core/Box';
-import List from '@material-ui/core/List';
 import Grid from '@material-ui/core/Grid';
+import List from '@material-ui/core/List';
 
 import Login from '../auth/login';
+import Repository from './repository';
 
 import { GET_REPOSITORIES } from '../../utils/queries';
-import Repository from './repository';
 
 function Github() {
   const [token] = React.useState(localStorage.getItem('github_token'));
