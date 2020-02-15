@@ -21,6 +21,7 @@ import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import GitHubIcon from '@material-ui/icons/GitHub';
 
 import Issue from './issue';
+import PullRequest from './pull-request';
 
 import { GET_REPOSITORY } from '../../utils/queries';
 
@@ -140,6 +141,17 @@ function RepositoryDetail({ repository_name }) {
                   Pull requests
                 </Badge>
                 <Divider />
+
+                <List>
+                  {repository.pullRequests.nodes.map(pullrequest => {
+                    return (
+                      <PullRequest
+                        key={pullrequest.title}
+                        pullrequest={pullrequest}
+                      />
+                    );
+                  })}
+                </List>
               </Paper>
             </Grid>
           </Grid>
