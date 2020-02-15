@@ -38,7 +38,7 @@ const commentBuilder = build('Comment').fields({
   author: userBuilder(),
 });
 
-const issueBuilder = build('Language').fields({
+export const issueBuilder = build('Language').fields({
   __typename: 'Issue',
   title: fake(f => f.lorem.words()),
   body: fake(f => f.lorem.paragraphs()),
@@ -59,7 +59,7 @@ const issueBuilder = build('Language').fields({
   },
 });
 
-const pullrequestBuilder = build('PullRequest').fields({
+export const pullrequestBuilder = build('PullRequest').fields({
   __typename: 'PullRequest',
   title: fake(f => f.lorem.words()),
   createdAt: fake(f => f.date.recent()),
