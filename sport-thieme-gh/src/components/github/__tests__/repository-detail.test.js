@@ -32,4 +32,18 @@ describe('Repository Detail Component:', () => {
       );
     });
   });
+
+  it('renders error message', async () => {
+    const { getByText } = render(
+      <MockedProvider mocks={mockRepositoryError}>
+        <RepositoryDetail repository_name={null}></RepositoryDetail>
+      </MockedProvider>,
+    );
+
+    await wait(() => {
+      expect(
+        getByText(/Something went wrong, please try again later./i),
+      ).toBeInTheDocument();
+    });
+  });
 });
