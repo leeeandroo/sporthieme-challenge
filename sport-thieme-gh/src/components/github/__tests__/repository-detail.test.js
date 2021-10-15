@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, wait } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import { MockedProvider } from '@apollo/react-testing';
 
 import RepositoryDetail from '../repository-detail';
@@ -18,7 +18,7 @@ describe('Repository Detail Component:', () => {
       </MockedProvider>,
     );
 
-    await wait(() => {
+    await waitFor(() => {
       expect(getByText(repository.name)).toBeInTheDocument();
       const number_of_open_issues = getByTestId('number-of-open-issues');
       const number_of_pull_requests = getByTestId('number-of-pull-requests');
@@ -40,7 +40,7 @@ describe('Repository Detail Component:', () => {
       </MockedProvider>,
     );
 
-    await wait(() => {
+    await waitFor(() => {
       expect(
         getByText(/Something went wrong, please try again later./i),
       ).toBeInTheDocument();

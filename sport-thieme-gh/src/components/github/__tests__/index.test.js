@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, wait } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import { MockedProvider } from '@apollo/react-testing';
 
 import Github from '../index';
@@ -16,7 +16,7 @@ describe('Github Component:', () => {
         <Github></Github>
       </MockedProvider>,
     );
-    await wait(() =>
+    await waitFor(() =>
       expect(
         getByText(
           /Please authorize our app to allow us to see your repositories./i,
@@ -33,7 +33,7 @@ describe('Github Component:', () => {
       </MockedProvider>,
     );
 
-    await wait(() =>
+    await waitFor(() =>
       expect(
         getByText(/Something went wrong, please try again later./i),
       ).toBeInTheDocument(),
@@ -48,7 +48,7 @@ describe('Github Component:', () => {
       </MockedProvider>,
     );
 
-    await wait(() => {
+    await waitFor(() => {
       expect(
         getByText(
           /Please choose the repository you want to see more information:/i,
